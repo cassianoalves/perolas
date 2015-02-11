@@ -1,7 +1,14 @@
 @(message: String)
 
-@main("Welcome to Play") {
+@main("Pérolas") {
 
-    @play20.welcome(message, style = "Java")
+    <h1>Pérolas</h1>
+    <div>
+        <p>Pérola do dia:</p>
+        <p>@models.Perola.getRandom();</p>
+    </div>
 
+    <div>
+        <a href="/edit">Gerenciar pérolas</a>
+    </div>
 }

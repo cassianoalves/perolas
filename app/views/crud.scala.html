@@ -1,0 +1,27 @@
+@(myForm: Form[Perola])
+
+@main("Gerenciamento Pérolas") {
+
+  <h1>Gerenciamento Pérolas</h1>
+  <div>
+    <h2>Nova Pérola</h2>
+
+    @helper.form(action = routes.Application.newPerola()) {
+
+      @helper.textarea(myForm("texto"))
+      @helper.inputPassword(myForm("autor"))
+      <button type="submit">Salva</button>
+    }
+
+    @*<form action="/perola" method="post">
+      <textarea rows="4" cols="80" id="texto"></textarea>
+      <input id="autor">
+      <button type="submit">Salva</button>
+    </form>
+*@
+  </div>
+
+  <div>
+    <h2>Pérolas:</h2>
+  </div>
+}
