@@ -4,6 +4,7 @@ import models.Perola;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.autorefresh;
 import views.html.crud;
 import views.html.index;
 
@@ -43,5 +44,9 @@ public class Application extends Controller {
         newPerola.save();
 
         return redirect("/edit");
+    }
+
+    public static Result randomHTML() {
+        return ok(autorefresh.render(60, Perola.getRandom()));
     }
 }

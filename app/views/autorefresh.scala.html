@@ -1,0 +1,14 @@
+@(timeout: Integer, perola: Perola)
+
+@main("Pérolas") {
+    <meta http-equiv="refresh" content="@timeout">
+    @if(perola == null) {
+        <h3>Ainda sem pérolas...</h3>
+        <p>
+            <a href="/edit">Comece a incluir</a>
+        </p>
+    } else {
+        <h4>@perola.texto</h4>
+        <h5>@perola.autor</h5>
+    }
+}

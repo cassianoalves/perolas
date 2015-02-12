@@ -1,23 +1,24 @@
-@(randomPerola: Perola)
+@(perola: Perola)
 
 @main("Pérolas") {
 
     <h1>Pérolas</h1>
     <div>
-        @if(randomPerola == null) {
+        @if(perola == null) {
             <h3>Ainda sem pérolas...</h3>
             <p>
                 <a href="/edit">Comece a incluir</a>
             </p>
         } else {
             <h3>Pérola do dia:</h3>
-            <p><i>@randomPerola.texto</i></p>
-            <p>@randomPerola.autor</p>
+            <h4>@perola.texto</h4>
+            <h5>@perola.autor</h5>
         }
     </div>
 
     <div>
         <a href="/perolas/random">RSS</a>
+        <a href="/random">HTML</a>
         <a href="/edit">Gerenciar pérolas</a>
     </div>
 }
