@@ -1,6 +1,5 @@
 package models;
 
-import javafx.scene.control.RadioMenuItem;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
