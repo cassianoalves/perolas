@@ -20,6 +20,9 @@ public class Application extends Controller {
 
     public static Result random() {
         Perola perola = Perola.getRandom();
+        if(perola == null) {
+            return ok("Sinto um vazio por dentro.\n-- Esse sistema");
+        }
         return ok(perola.texto + "\n-- " + perola.autor);
     }
 

@@ -17,9 +17,13 @@ public class Perola extends Model {
 
     public static Perola getRandom() {
         Random random = new Random(new Date().getTime());
-        int randomId = Math.abs(random.nextInt() % (find.all().size()));
-        System.out.println("id " + randomId);
-        return find.all().get(randomId);
+        int total = find.all().size();
+        if (total > 0) {
+            int randomId = Math.abs(random.nextInt() % total);
+            System.out.println("id " + randomId);
+            return find.all().get(randomId);
+        }
+        return null;
     }
 
     public static Finder<Long,Perola> find = new Finder<Long,Perola>(
