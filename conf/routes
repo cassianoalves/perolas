@@ -5,6 +5,7 @@
 # Home page
 GET        /                    controllers.Application.index()
 GET        /edit                controllers.Application.crud()
+GET        /delete/:id          controllers.Application.delete(id: Long)
 
 GET        /perolas/random              controllers.Application.random()
 POST       /perolas              controllers.Application.newPerola()

@@ -1,27 +1,39 @@
-@(myForm: Form[Perola])
+@(myForm: Form[Perola], allPerola: List[Perola])
 
 @main("Gerenciamento Pérolas") {
 
   <h1>Gerenciamento Pérolas</h1>
+    <a href="/">Pérola do dia</a>
   <div>
     <h2>Nova Pérola</h2>
 
     @helper.form(action = routes.Application.newPerola()) {
-
       @helper.textarea(myForm("texto"))
-      @helper.inputPassword(myForm("autor"))
+      @helper.inputText(myForm("autor"))
       <button type="submit">Salva</button>
     }
 
-    @*<form action="/perola" method="post">
-      <textarea rows="4" cols="80" id="texto"></textarea>
-      <input id="autor">
-      <button type="submit">Salva</button>
-    </form>
-*@
   </div>
 
   <div>
     <h2>Pérolas:</h2>
+      <table>
+          <thead>
+              <th>ID</th>
+              <th>Pérola</th>
+              <th>Autor</th>
+          </thead>
+          <tbody>
+          @for(perola <- allPerola) {
+              <tr>
+                  <td>@perola.id</td>
+                  <td>@perola.texto</td>
+                  <td>@perola.autor</td>
+                  <td><a href="/delete/@perola.id">Delete</a></td>
+              </tr>
+          }
+
+          </tbody>
+      </table>
   </div>
 }

@@ -1,14 +1,16 @@
-@(message: String)
+@(randomPerola: Perola)
 
 @main("Pérolas") {
 
     <h1>Pérolas</h1>
     <div>
         <p>Pérola do dia:</p>
-        <p>@models.Perola.getRandom();</p>
+        <p><i>@randomPerola.texto</i></p>
+        <p>@randomPerola.autor</p>
     </div>
 
     <div>
+        <a href="/perolas/random">RSS</a>
         <a href="/edit">Gerenciar pérolas</a>
     </div>
 }
